@@ -6,6 +6,45 @@ This is your new Kedro project with Kedro-Viz and PySpark setup, which was gener
 
 Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
 
+## Rules and Guidelines
+
+In order to get the best out of the template:
+
+* Don't remove any lines from the `.gitignore` file we provide.
+* Make sure your results can be reproduced by following a [data engineering convention](https://docs.kedro.org/en/stable/faq/faq.html#what-is-data-engineering-convention).
+* Don't commit data to your repository.
+* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`.
+
+## How to Set Up Your Environment
+
+1. **Install Conda**
+
+   Follow the installation guide for Conda from [Conda Documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html).
+
+2. **Create a New Environment**
+
+   Open a terminal and run:
+
+   ```bash
+   conda create --name <env_name> python=3.8
+   conda activate <env_name>
+
+
+
+
+
+
+
+
+
+# healthcare-etl-v4
+
+## Overview
+
+This is your new Kedro project with Kedro-Viz and PySpark setup, which was generated using `kedro 0.19.6`.
+
+Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
+
 ## Rules and guidelines
 
 In order to get the best out of the template:
@@ -33,15 +72,6 @@ You can run your Kedro project with:
 kedro run
 ```
 
-## How to test your Kedro project
-
-Have a look at the files `src/tests/test_run.py` and `src/tests/pipelines/data_science/test_pipeline.py` for instructions on how to write your tests. Run the tests as follows:
-
-```
-pytest
-```
-
-To configure the coverage threshold, look at the `.coveragerc` file.
 
 ## Project dependencies
 
@@ -66,26 +96,6 @@ After installing Jupyter, you can start a local notebook server:
 
 ```
 kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
 ```
 
 ### How to ignore notebook output cells in `git`
