@@ -1,0 +1,13 @@
+# conf/base/parameters.yml
+
+primary_key: patient_id
+great_expectations_context_path: gx
+
+snowflake_config:
+  sfURL: bc68878.eu-west-2.aws
+  sfDatabase: HEALTHCARE_DB
+  sfSchema: HEALTHCARE_SC
+  sfWarehouse: COMPUTE_WH
+  sfRole: ACCOUNTADMIN
+  sfUser: ISHWARPAWAR
+  sfPassword: Password_DBT_123

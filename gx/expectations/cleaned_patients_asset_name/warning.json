@@ -1,0 +1,78 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "cleaned_patients_asset_name.warning",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "patient_id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "patient_id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "social_security_number",
+        "regex": "\\d{3}-\\d{2}-\\d{4}"
+      },
+      "meta": {
+        "notes": {
+          "content": "Expect SSN to match the pattern ###-##-####",
+          "format": "markdown"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "zip_code",
+        "regex": "^\\d{5}$"
+      },
+      "meta": {
+        "notes": {
+          "content": "Expect ZIP Code to be exactly 5 digits",
+          "format": "markdown"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "latitude",
+        "max_value": 90,
+        "min_value": -90
+      },
+      "meta": {
+        "notes": {
+          "content": "Expect latitude to be between -90 and 90 degrees",
+          "format": "markdown"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "longitude",
+        "max_value": 180,
+        "min_value": -180
+      },
+      "meta": {
+        "notes": {
+          "content": "Expect longitude to be between -180 and 180 degrees",
+          "format": "markdown"
+        }
+      }
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "great_expectations_version": "0.18.19"
+  }
+}

@@ -1,0 +1,133 @@
+healthcare_master:
+  filepath: data/04_feature/healthCareMaster.csv
+  type: spark.SparkDataset
+  file_format: csv
+  load_args:
+    header: True
+    inferSchema: True
+  save_args:
+    sep: ","
+    header: True
+    mode: overwrite
+
+transformed_symptoms@csv:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/primary_symptoms.csv
+  save_args:
+    index: False
+
+transformed_symptoms@spark:
+  filepath: data/03_primary/primary_symptoms.csv
+  type: spark.SparkDataset
+  file_format: csv
+  load_args:
+    header: True
+    inferSchema: True
+  save_args:
+    sep: ","
+    header: True
+    mode: overwrite
+
+joined_patients@csv:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/joined_patients.csv
+
+joined_patients@spark:
+  filepath: data/03_primary/joined_patients.csv
+  type: spark.SparkDataset
+  file_format: csv
+  load_args:
+    header: True
+    inferSchema: True
+  save_args:
+    sep: ","
+    header: True
+    mode: overwrite
+
+medications:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/medications.csv
+
+cleaned_medications@csv:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/cleaned_medications.csv
+
+cleaned_medications@spark:
+  filepath: data/02_intermediate/cleaned_medications.csv
+  type: spark.SparkDataset
+  file_format: csv
+  load_args:
+    header: True
+    inferSchema: True
+  save_args:
+    sep: ","
+    header: True
+    mode: overwrite
+
+symptoms:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/symptoms.csv
+
+cleaned_symptoms:
+  filepath: data/02_intermediate/cleaned_symptoms.csv
+  type: pandas.CSVDataset
+
+patients:
+  filepath: data/01_raw/patients.csv
+  type: pandas.CSVDataset
+
+cleaned_patients:
+  filepath: data/02_intermediate/cleaned_patients.csv
+  type: pandas.ExcelDataset
+
+patient_gender:
+  filepath: data/01_raw/patient_gender.csv
+  type: pandas.CSVDataset
+
+cleaned_patients_gender:
+  filepath: data/02_intermediate/cleaned_patients_gender.csv
+  type: pandas.CSVDataset
+
+conditions:
+  type: pandas.ExcelDataset
+  filepath: data/01_raw/conditions.xlsx
+
+cleaned_conditions@csv:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/cleaned_conditions.csv
+
+cleaned_conditions@spark:
+  filepath: data/02_intermediate/cleaned_conditions.csv
+  type: spark.SparkDataset
+  file_format: csv
+  load_args:
+    header: True
+    inferSchema: True
+  save_args:
+    sep: ","
+    header: True
+    mode: overwrite
+
+encounters:
+  filepath: data/01_raw/encounters.parquet
+  type: spark.SparkDataset
+
+cleaned_encounters:
+  filepath: data/02_intermediate/cleaned_encounters.parquet
+  type: spark.SparkDataset
+  load_args:
+    header: True
+    inferSchema: True
+  save_args:
+    sep: ","
+    header: True
+    mode: overwrite
+
+cleaned_patients_parquet:
+  type: spark.SparkDataset
+  filepath: data/03_primary/cleaned_patients_parquet
+  file_format: parquet
+  load_args:
+    header: true
+  save_args:
+    mode: overwrite
